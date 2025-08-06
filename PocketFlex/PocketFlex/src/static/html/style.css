@@ -26,7 +26,7 @@ body {
 }
 
 h1, h2 {
-  color: #2e7d32;
+  color: #1F7D53;
   margin-bottom: 20px;
 }
 
@@ -47,7 +47,7 @@ input[type="submit"] {
 }
 
 input[type="submit"] {
-  background-color: #2e7d32;
+  background-color: #1F7D53;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -69,7 +69,7 @@ ul li {
 }
 
 a {
-  color: #1b5e20;
+  color: #1F7D53;
   text-decoration: none;
   font-weight: bold;
 }
@@ -91,7 +91,7 @@ footer {
 }
 
 .success {
-  color: #2e7d32;
+  color: #1F7D53;
 }
 
 .error {
@@ -102,7 +102,7 @@ footer {
 .btn {
   display: inline-block;
   padding: 12px 24px;
-  background-color: #2e7d32;
+  background-color: #1F7D53;
   color: white;
   border: none;
   border-radius: 30px;
@@ -113,18 +113,18 @@ footer {
 }
 
 .btn:hover {
-  background-color: #1b5e20;
+  background-color: #255F38;
   text-decoration: none;
 }
 
 .secondary {
   background-color: transparent;
-  border: 2px solid #2e7d32;
-  color: #2e7d32;
+  border: 2px solid #1F7D53;
+  color: #1F7D53;
 }
 
 .secondary:hover {
-  background-color: #2e7d32;
+  background-color: #1F7D53;
   color: white;
 }
 
