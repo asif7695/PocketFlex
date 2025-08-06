@@ -1,0 +1,13 @@
+# Ignore IntelliJ stuff
+.idea/
+*.iml
+
+# Ignore compiled Java classes
+*.class
+
+# Ignore OS crap
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

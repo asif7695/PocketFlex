@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>PocketFlex - Delete Expense</title>
+</head>
+<body>
+    <div class="container">
+        <h1>PocketFlex</h1>
+        <h2>Delete Expense</h2>
+        <ul id="expense-list">
+            <li>No expenses to show.</li>
+        </ul>
+        <form id="delete-expense-form">
+            <input type="number" id="delete-index" placeholder="Enter index to delete" min="1" required>
+            <input type="submit" value="Delete Expense">
+        </form>
+        <p id="delete-message" style="display: none;"></p>
+        <a href="Main.html">Back to Dashboard</a>
+        <footer>Made by Team PocketFlex</footer>
+    </div>
+    <script>
+        // Placeholder for JavaScript to handle deletion
+        document.getElementById('delete-expense-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Delete expense functionality coming soon!');
+            // JavaScript to handle expense deletion will go here
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>PocketFlex - Add Expense</title>
+</head>
+<body>
+    <div class="container">
+        <h1>PocketFlex</h1>
+        <h2>Add Expense</h2>
+        <form id="add-expense-form">
+            <input type="text" id="title" placeholder="Title" required>
+            <input type="number" id="amount" placeholder="Amount (BDT)" step="0.01" required>
+            <input type="text" id="category" placeholder="Category" required>
+            <input type="submit" value="Add Expense">
+        </form>
+        <p id="add-message" style="display: none;"></p>
+        <a href="Main.html">Back to Dashboard</a>
+        <footer>Made by Team PocketFlex</footer>
+    </div>
+    <script>
+        // Placeholder for JavaScript to handle form submission
+        document.getElementById('add-expense-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Add expense functionality coming soon!');
+            // JavaScript to handle expense addition will go here
+        });
+    </script>
+</body>
+</html>

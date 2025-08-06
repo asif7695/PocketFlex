@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PocketFlex - Expense Tracker</title>
+    <style>
+        /* === RESET === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #f4f7f6, #c8e6c9);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #1F7D53;
+        }
+
+        p {
+            margin-bottom: 30px;
+            font-size: 1rem;
+            color: #27391C;
+        }
+
+        .auth-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .auth-buttons .btn {
+            padding: 12px 24px;
+            background-color: #1F7D53;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .auth-buttons .btn:hover {
+            background-color: #255F38;
+        }
+
+        .guest-button {
+            margin-top: 10px;
+        }
+
+        .guest-button .btn {
+            padding: 10px 20px;
+            background-color: transparent;
+            border: 2px solid #1F7D53;
+            color: #1F7D53;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .guest-button .btn:hover {
+            background-color: #1F7D53;
+            color: white;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>PocketFlex</h1>
+    <p>Your sleek, Daily Expense Tracker 💸</p>
+
+    <div class="auth-buttons">
+        <button class="btn" onclick="alert('Login functionality coming soon!')">Login</button>
+        <button class="btn" onclick="alert('Sign Up functionality coming soon!')">Sign Up</button>
+    </div>
+
+    <div class="guest-button">
+        <button class="btn" onclick="window.location.href='Main.html'">
+        Try as Guest
+        </button>
+    </div>
+
+    <footer>
+        Made by Team PocketFlex
+    </footer>
+</div>
+
+</body>
+</html>
