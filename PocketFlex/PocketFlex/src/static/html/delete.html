@@ -21,11 +21,52 @@
         <footer>Made by Team PocketFlex</footer>
     </div>
     <script>
-        // Placeholder for JavaScript to handle deletion
-        document.getElementById('delete-expense-form').addEventListener('submit', function(e) {
+        // Load expenses from localStorage
+        let expenses = JSON.parse(localStorage.getItem('expenses')) || [];
+        const expenseList = document.getElementById('expense-list');
+        const deleteForm = document.getElementById('delete-expense-form');
+        const deleteMessage = document.getElementById('delete-message');
+
+        // Display expenses
+        function displayExpenses() {
+            if (expenses.length === 0) {
+                expenseList.innerHTML = '<li>No expenses to show.</li>';
+            } else {
+                expenseList.innerHTML = '';
+                expenses.forEach((expense, index) => {
+                    const li = document.createElement('li');
+                    li.textContent = `${index + 1}. Title: ${expense.title}, Amount: ${expense.amount} BDT, Category: ${expense.category}`;
+                    expenseList.appendChild(li);
+                });
+            }
+        }
+        displayExpenses();
+
+        // Handle form submission
+        deleteForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Delete expense functionality coming soon!');
-            // JavaScript to handle expense deletion will go here
+            const index = parseInt(document.getElementById('delete-index').value) - 1;
+
+            // Validate index
+            if (index < 0 || index >= expenses.length) {
+                deleteMessage.textContent = 'Invalid index.';
+                deleteMessage.className = 'error';
+                deleteMessage.style.display = 'block';
+                return;
+            }
+
+            // Delete expense and update localStorage
+            expenses.splice(index, 1);
+            localStorage.setItem('expenses', JSON.stringify(expenses));
+
+            // Show success message and update list
+            deleteMessage.textContent = 'Expense deleted.';
+            deleteMessage.className = 'success';
+            deleteMessage.style.display = 'block';
+            displayExpenses();
+
+            // Clear form
+            deleteForm.reset();
         });
     </script>
 </body>

@@ -14,8 +14,13 @@
         <footer>Made by Team PocketFlex</footer>
     </div>
     <script>
-        // Placeholder for JavaScript to calculate and display total
-        // Will be updated to match ExpenseManager.getTotalSpent()
+        // Load expenses from localStorage
+        const expenses = JSON.parse(localStorage.getItem('expenses')) || [];
+        const totalSpent = document.getElementById('total-spent');
+
+        // Calculate total
+        const total = expenses.reduce((sum, expense) => sum + expense.amount, 0);
+        totalSpent.textContent = `Total: ${total.toFixed(2)} BDT`;
     </script>
 </body>
 </html>

@@ -11,7 +11,7 @@
         <h2>Add Expense</h2>
         <form id="add-expense-form">
             <input type="text" id="title" placeholder="Title" required>
-            <input type="number" id="amount" placeholder="Amount (BDT)" step="0.01" required>
+            <input type="number" id="amount" placeholder="Amount (BDT)" step="0.01" min="0" required>
             <input type="text" id="category" placeholder="Category" required>
             <input type="submit" value="Add Expense">
         </form>
@@ -20,11 +20,46 @@
         <footer>Made by Team PocketFlex</footer>
     </div>
     <script>
-        // Placeholder for JavaScript to handle form submission
+        // Initialize expenses array from localStorage or create new
+        let expenses = JSON.parse(localStorage.getItem('expenses')) || [];
+
+        // Handle form submission
         document.getElementById('add-expense-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Add expense functionality coming soon!');
-            // JavaScript to handle expense addition will go here
+
+            // Get form values
+            const title = document.getElementById('title').value;
+            const amount = parseFloat(document.getElementById('amount').value);
+            const category = document.getElementById('category').value;
+
+            // Validate inputs
+            if (!title || isNaN(amount) || amount < 0 || !category) {
+                const message = document.getElementById('add-message');
+                message.textContent = 'Please fill all fields correctly.';
+                message.className = 'error';
+                message.style.display = 'block';
+                return;
+            }
+
+            // Create expense object
+            const expense = {
+                title: title,
+                amount: amount,
+                category: category
+            };
+
+            // Add to expenses array and save to localStorage
+            expenses.push(expense);
+            localStorage.setItem('expenses', JSON.stringify(expenses));
+
+            // Show success message
+            const message = document.getElementById('add-message');
+            message.textContent = 'Expense added!!!';
+            message.className = 'success';
+            message.style.display = 'block';
+
+            // Clear form
+            document.getElementById('add-expense-form').reset();
         });
     </script>
 </body>

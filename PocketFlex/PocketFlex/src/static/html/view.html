@@ -16,8 +16,21 @@
         <footer>Made by Team PocketFlex</footer>
     </div>
     <script>
-        // Placeholder for JavaScript to populate expense list
-        // Will be updated dynamically to match ExpenseManager.viewExpenses()
+        // Load expenses from localStorage
+        const expenses = JSON.parse(localStorage.getItem('expenses')) || [];
+        const expenseList = document.getElementById('expense-list');
+
+        // Display expenses
+        if (expenses.length === 0) {
+            expenseList.innerHTML = '<li>No expenses to show.</li>';
+        } else {
+            expenseList.innerHTML = '';
+            expenses.forEach((expense, index) => {
+                const li = document.createElement('li');
+                li.textContent = `${index + 1}. Title: ${expense.title}, Amount: ${expense.amount} BDT, Category: ${expense.category}`;
+                expenseList.appendChild(li);
+            });
+        }
     </script>
 </body>
 </html>
